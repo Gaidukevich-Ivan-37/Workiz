@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Square Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Подключаем flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <!-- Подключаем библиотеку flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Раздел "Детали клиента" -->
+        <div class="box">
+            <h2>Client Details</h2>
+            
+            <div class="name-container">
+                <!-- Поля для имени и фамилии -->
+                <input type="text" placeholder="First name" class="name-input" required>
+                <input type="text" placeholder="Last name" class="name-input" required>
+            </div>
+
+            <!-- Поле для телефона -->
+            <input type="text" placeholder="Phone" class="phone-input">
+            
+            <!-- Поле для email -->
+            <input type="email" placeholder="Email (optional)" class="email-input" required="name@example.com">
+        </div>
+
+        <!-- Раздел "Детали работы" -->
+        <div class="box">
+            <h2>Job Details</h2>
+            
+            <div class="name-container">
+                <!-- Выпадающие списки для типа работы и источника вакансии -->
+                <select class="job-type-input" aria-label="Job type">
+                    <option value="" disabled selected class="hidden-option">Job type</option>
+                    <option value="developer">Developer</option>
+                    <option value="designer">Designer</option>
+                    <option value="manager">Manager</option>
+                    <option value="analyst">Analyst</option>
+                    <option value="consultant">Consultant</option>
+                    <option value="tester">Tester</option>
+                    <option value="hr">HR</option>
+                    <option value="support">Support</option>
+                </select>
+
+                <select class="job-source-input" aria-label="Job source">
+                    <option value="" disabled selected class="hidden-option">Job source</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="indeed">Indeed</option>
+                    <option value="glassdoor">Glassdoor</option>
+                    <option value="company-website">Company Website</option>
+                    <option value="referred">Referred</option>
+                    <option value="job-fair">Job Fair</option>
+                </select>
+            </div>
+            
+            <!-- Текстовое поле для описания работы -->
+            <textarea placeholder="Job description (optional)"></textarea>
+        </div>
+
+        <!-- Раздел "Местоположение сервиса" -->
+        <div class="box">
+            <h2>Service Location</h2>
+
+            <!-- Поля для адреса, города, штата и почтового индекса -->
+            <input type="text" placeholder="Address" class="address-input">
+            <input type="text" placeholder="City" class="city-input">
+            <input type="text" placeholder="State" class="state-input">
+
+            <div class="name-container">
+                <!-- Поля для почтового индекса и области -->
+                <input type="text" placeholder="Zip code" class="zip-code-input">
+                <input type="text" placeholder="Area" class="area-input">
+            </div>
+        </div>
+
+        <!-- Раздел "Запланировано" -->
+        <div class="box">
+            <h2>Scheduled</h2>
+
+            <!-- Поле для даты -->
+            <input type="text" id="date-input" placeholder="Start Date">
+            
+            <div class="time-container">
+                <!-- Поля для времени начала и окончания -->
+                <input type="time" aria-label="Start time">
+                <input type="time" aria-label="End time">
+            </div>
+            
+            <!-- Добавляем select для "Test select" -->
+            <select class="test-select-input" aria-label="Test select">
+                <option value="" disabled selected class="hidden-option">Test select</option>
+                <option value="test1">Test 1</option>
+                <option value="test2">Test 2</option>
+                <option value="test3">Test 3</option>
+                <option value="test4">Test 4</option>
+            </select>
+        </div>
+        
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

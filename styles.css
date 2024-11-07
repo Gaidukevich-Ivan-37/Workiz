@@ -1,0 +1,100 @@
+/* Основные настройки страницы */
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 100vh;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9fb;
+    color: #565b59; /* Устанавливаем основной цвет текста */
+}
+
+/* Контейнер для всех квадратов */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца одинаковой ширины */
+    grid-template-rows: repeat(2, 1fr); /* Два ряда одинаковой высоты */
+    gap: 1.5vw; /* Расстояние между квадратами */
+    width: 80vw;
+    height: 44vw;
+    box-sizing: border-box;
+}
+
+/* Стили для каждого квадрата */
+.box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Заголовок в блоке */
+.box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+/* Стили для всех полей ввода и выбора */
+.box input,
+.box select,
+textarea {
+    width: 50%; /* Увеличиваем ширину до 50% */
+    margin: 8px 0;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #565b59; /* Цвет рамки */
+    border-radius: 4px;
+    color: #565b59; /* Цвет текста в полях ввода */
+}
+
+/* Особый стиль для поля "Job description", чтобы оно занимало всю ширину */
+textarea {
+    width: 100%;  /* Окошко для описания работы будет занимать всю ширину */
+    height: 100%; /* Окошко будет занимать всю высоту блока */
+    resize: none; /* Отключаем возможность изменения размера */
+}
+
+/* Контейнеры для каждой группы элементов в блоках */
+.name-container,
+.time-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5vw; /* Расстояние между полями */
+}
+
+/* Особое правило для полей в .name-container, чтобы они имели одинаковое расстояние */
+.name-container input {
+    width: 60%; /* Увеличиваем поля Имя и Фамилия до 60% */
+}
+
+/* Медиа-запрос для экранов меньших размеров */
+@media (max-width: 768px) {
+    /* Меняем разметку для маленьких экранов */
+    .container {
+        grid-template-columns: 1fr; /* Один столбец */
+        grid-template-rows: auto; /* Автоматическое определение высоты рядов */
+        width: 100vw;
+        height: auto;
+        gap: 1.5vw;
+    }
+
+    /* Уменьшаем отступы в контейнерах */
+    .box {
+        padding: 15px;
+    }
+
+    /* Для маленьких экранов меняем направление на вертикальное для name-container и time-container */
+    .name-container,
+    .time-container {
+        flex-direction: column;
+        gap: 1.5vw;
+    }
+}
